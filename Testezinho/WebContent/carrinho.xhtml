@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Carrinho</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:selectManyCheckbox value="#{cadastroBean.listaSelecionados1}">
+			<f:selectItems value="#{cadastroBean.usuarios}" var="usuario"
+				itemLabel="#{usuario.nome}" itemValue="#{usuario.nome}" />
+		</h:selectManyCheckbox>
+
+
+		<h:selectManyCheckbox value="#{CarrinhoBean.carrinho}">
+			<f:selectItem itemLabel="Meia" itemValue="Meia" />
+			<f:selectItem itemLabel="Tenis" itemValue="Tenis" />
+			<f:selectItem itemLabel="Blusa" itemValue="Blusa" />
+		</h:selectManyCheckbox>
+		<h:commandButton action="#{CarrinhoBean.carrinho}" value="OK" />
+	</h:form>
+
+
+</h:body>
+</html>
