@@ -5,22 +5,38 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-	<title>Carrinho</title>
+	<title>Carrinho - JSF</title>
 </h:head>
 <h:body>
 	<h:form>
-		<h:selectManyCheckbox value="#{cadastroBean.listaSelecionados1}">
-			<f:selectItems value="#{cadastroBean.usuarios}" var="usuario"
-				itemLabel="#{usuario.nome}" itemValue="#{usuario.nome}" />
+		<h:selectManyCheckbox value="#{carrinhoBean.listaSelecionados}">
+			<f:selectItems 
+			 value="#{carrinhoBean.produto}"
+			 var="produto" 
+			 itemLabel="#{produto.nome}" 
+			 itemValue="#{produto.id}"/>
 		</h:selectManyCheckbox>
 
 
-		<h:selectManyCheckbox value="#{CarrinhoBean.carrinho}">
-			<f:selectItem itemLabel="Meia" itemValue="Meia" />
-			<f:selectItem itemLabel="Tenis" itemValue="Tenis" />
-			<f:selectItem itemLabel="Blusa" itemValue="Blusa" />
-		</h:selectManyCheckbox>
-		<h:commandButton action="#{CarrinhoBean.carrinho}" value="OK" />
+
+		<h:selectOneMenu value="#{carrinhoBean.quantidade}">
+		<f:selectItem itemLabel="0" itemValue="0"/>
+		<f:selectItem itemLabel="1" itemValue="1"/>
+		<f:selectItem itemLabel="2" itemValue="2"/>
+		<f:selectItem itemLabel="3" itemValue="3"/>
+		</h:selectOneMenu>
+		
+		
+		<h:selectOneRadio value = "#{carrinhoBean.pagamento}">
+			<f:selectItems 
+			value ="#{carrinhoBean.formasPagamento}"
+			 var = "forma" 
+			 itemLabel="#{forma.nome}" 
+			 itemValue="#{foma.id}"/>
+		</h:selectOneRadio>
+		
+		
+		<h:commandButton action="#{carrinhoBean.Comprar}" value="comprar" />
 	</h:form>
 
 

@@ -6,16 +6,14 @@ public class LoginBean {
 	private String senha;
 	private boolean termo;
 	
-	public void logar() {
+	public String logar() {
 		if ("Hick".equals(getLogin()) && "1234".equals(getSenha())) {
 			System.out.println("Bem vindo caralhudo: " + getLogin());
-			
+			return "carrinho";
 		}else {
 			System.out.println("Usuario não altorizado");
-		}
-		
-		System.out.println("CheckBox Conectado: " + termo);
-		
+			return "login";
+		}		
 	}
 	
 	
