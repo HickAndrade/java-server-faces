@@ -1,22 +1,28 @@
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 public class LoginBean {
 	private String login;
 	private String senha;
 	private boolean termo;
-	
+
 	public String logar() {
 		if ("Hick".equals(getLogin()) && "1234".equals(getSenha())) {
 			System.out.println("Bem vindo caralhudo: " + getLogin());
-			return "carrinho";
-		}else {
+			return "carrinho?faces-redirect=true";
+		} else {
 			System.out.println("Usuario não altorizado");
+			FacesMessage mensagem = new FacesMessage("Usuario invalido!");
+			FacesContext.getCurrentInstance().addMessage(null, mensagem);
+			
+			FacesMessage mensagem2 = new FacesMessage("senha invalido!");
+			FacesContext.getCurrentInstance().addMessage(null, mensagem2);
 			return "login";
-		}		
+		}
 	}
-	
-	
+
 	public boolean isTermo() {
 		return termo;
 	}

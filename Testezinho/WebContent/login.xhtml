@@ -6,17 +6,24 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<title>Login - JSF</title>
+	<h:outputScript library="js" name="jquery-3.4.0.min.js"/>
+	<h:outputScript library="js" name="bootstrap.min.js"/>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
+		
 </h:head>
 <h:body>
-	<h:form>
+<h:messages/>
+	<h:form styleClass="text-center form-inline">
+	
 		<h:outputLabel value="Login" />
-		<h:inputText value="#{loginBean.login}" />
+		<h:inputText  styleClass="rounded border" value="#{loginBean.login}" />
 		<h:outputLabel value= "Senha"/>
-		<h:inputSecret value="#{loginBean.senha}"/>
+		<h:inputSecret styleClass="rounded border" value="#{loginBean.senha}"/>
 		<h:selectBooleanCheckbox value = "#{loginBean.termo}" id="termo"/>
 		<h:outputLabel value = "Manter Conectado" for= "termo"/>
 		
-		<h:commandButton action="#{loginBean.logar}" value="Entrar" />
+		<h:commandButton styleClass="btn btn-warning" action="#{loginBean.logar}" value="Entrar" />
+		
 	</h:form>
 </h:body>
 </html>

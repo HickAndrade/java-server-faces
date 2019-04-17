@@ -14,7 +14,7 @@
 			 value="#{carrinhoBean.produto}"
 			 var="produto" 
 			 itemLabel="#{produto.nome}" 
-			 itemValue="#{produto.id}"/>
+			 itemValue="#{produto.nome}"/>
 		</h:selectManyCheckbox>
 
 
@@ -32,7 +32,7 @@
 			value ="#{carrinhoBean.formasPagamento}"
 			 var = "forma" 
 			 itemLabel="#{forma.nome}" 
-			 itemValue="#{foma.id}"/>
+			 itemValue="#{forma.id}-#{forma.nome}"/>
 		</h:selectOneRadio>
 		
 		

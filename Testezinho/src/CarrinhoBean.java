@@ -22,6 +22,7 @@ public class CarrinhoBean {
 		for (String valor : listaSelecionados) {
 			System.out.println(valor);
 		}
+	
 		System.out.println("Quantidade: " + getQuantidade());
 		System.out.println("Forma Pagamento: "+ getPagamento());
 	}
