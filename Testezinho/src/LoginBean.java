@@ -11,7 +11,8 @@ public class LoginBean {
 	public String logar() {
 		if ("Hick".equals(getLogin()) && "1234".equals(getSenha())) {
 			System.out.println("Bem vindo caralhudo: " + getLogin());
-			return "carrinho?faces-redirect=true";
+			return "cadastro?faces-redirect=true";
+			
 		} else {
 			System.out.println("Usuario não altorizado");
 			FacesMessage mensagem = new FacesMessage("Usuario invalido!");
